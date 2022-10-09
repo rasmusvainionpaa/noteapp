@@ -1,18 +1,13 @@
-import Footer from "./Footer"
-import Navbar from "./Navbar"
+import { PropsWithChildren } from "react";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
-type LayoutProps = {
-    children: React.ReactNode,
-};
-
-const Layout = ({ children }: LayoutProps) => {
-    return (
-        <>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-        </>
-    )
+export default function Layout({ children }: PropsWithChildren) {
+  return (
+    <>
+      <Navbar />
+      <main className="mx-auto max-w-6xl py-10">{children}</main>
+      <Footer />
+    </>
+  );
 }
-
-export default Layout
