@@ -36,7 +36,7 @@ jobs:
             docker pull ghcr.io/${{ github.repository }}:latest
             docker stop ${{ github.event.repository.name }}
             docker rm ${{ github.event.repository.name }}
-            docker run --name=${{ github.repository.name }} --restart=always -p 3000:80 -d ghcr.io/${{ github.repository }}:latest
+            docker run --name=${{ github.repository.name }} --restart=always -p 3001:3000 -d ghcr.io/${{ github.repository }}:latest
 
 
 
