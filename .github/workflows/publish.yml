@@ -30,8 +30,8 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             docker pull ghcr.io/${{ github.repository }}:latest
-            docker stop ${{ github.repository }}
-            docker rm ${{ github.repository }}
+            docker stop ${{ github.event.repository.name }}
+            docker rm ${{ github.event.repository.name }}
             docker run --name=${{ github.repository }} --restart=always -p 3000:80 -d ghcr.io/${{ github.repository }}:latest
 
 
