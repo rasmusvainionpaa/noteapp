@@ -23,12 +23,15 @@ jobs:
 
       - name: executing remote ssh commands
         uses: appleboy/ssh-action@v0.1.5
+        env:
+          REPOSITORY: ${{ github.repository }}
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          envs: github
+          envs: REPOSITORY,REPOSITORY_NAME
           script: |
             docker pull ghcr.io/${{ github.repository }}:latest
             docker stop ${{ github.event.repository.name }}
