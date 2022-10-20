@@ -12,11 +12,11 @@ export async function getServerSideProps() {
     { id: 2, body: "this is a note2" },
     { id: 3, body: "this is a note3" },
     { id: 4, body: "this is a note4" },
-    { id: 4, body: "this is a note5" },
     { id: 5, body: "this is a note5" },
     { id: 6, body: "this is a note6" },
     { id: 7, body: "this is a note7" },
     { id: 8, body: "this is a note8" },
+    { id: 9, body: "this is a note9" },
   ];
 
   return {
